@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="Сообщения">
+<meta name="theme-color" content="#0C0C0C">
+<title>Сообщения</title>
+<link rel="manifest" href="data:application/manifest+json;base64,ewogICJuYW1lIjogItCh0L7QvtCx0YnQtdC90LjRjyIsCiAgInNob3J0X25hbWUiOiAi0KHQvtC+0LHRidC10L3QuNGPIiwKICAiZGVzY3JpcHRpb24iOiAi0J/RgNC40LvQvtC20LXQvdC40LUg0YHQvtC+0LHRidC10L3QuNC5IiwKICAic3RhcnRfdXJsIjogIi4vIiwKICAic2NvcGUiOiAiLi8iLAogICJkaXNwbGF5IjogInN0YW5kYWxvbmUiLAogICJiYWNrZ3JvdW5kX2NvbG9yIjogIiMwQzBDMEMiLAogICJ0aGVtZV9jb2xvciI6ICIjMEMwQzBDIiwKICAib3JpZW50YXRpb24iOiAicG9ydHJhaXQtcHJpbWFyeSIsCiAgImljb25zIjogWwogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBTUFBQUFEQUNBSUFBQURkdnZ0UUFBQUY2RWxFUVZSNDJ1M2QyWExqVkJTR1VUMkZuY3JEOVVBM1RkUEFLeklQVGFETlBQTXVRQ2w0U21KYnNvK2tvNzFYcXY1YlgxanJxMUxKeDA1emZYMzlqMW5XTmQ0RUU0Q1pBTXdFWUNZQU13R1lDY0JNQUdZQ01CT0FtUURNQkdBbUFETUJtQW5BZG5mMTNoODcrLzN3WHYxMlpMOCtPTyt2QU9yQy92NmZkOEFQaDcvZHU3L2NtK3NnZ0hIQjcyNWkvTnY5dkpuckpJQmgwVmVNLys1Y1B3R2NpZjZ2dy9Cbmd2L3E1VTk3YzEwRjBCRitQUHhDRUVBSDlQSHhYNzM4Y1c4Q0FEOHQvczNlK1VFQTRPZkZ2OTR5WVFnTi9QQ3Y4UzhUUnRDQUQvL3kzcjV2SjRBSThELzRHLzR6OE85T0FQQ254Ujg5Z2daKytFL2hYNzc0cnAwQTVnSWYvdUw0ZHljQStOUGlqeFpCQXovOGZmRXZYNnphQ1FEK3RQaWpSTkNFZ0EvL0pQZ2poTkRBRC8rbCtKZHZ2MmtuQVBqVDRwOXJCQTM4OEpmQ1A4Y0lHdmpoTDRuL2R0OEtBUDY4K05jVGdFZWRhZkVMQVA3VStPY1NRUU0vL0VQaGIvZjhHd0hBbnhmL2VnS0FQeTMrbWlPb093RDR3K0FYQVB5cDhTK2YzN1FUQVB4cDhkY1lRUU0vL0dQaXJ5MkN1Z0tBUHdWK0FjQ2ZHdi95MmRmdEJPQVgyOUxpRndEOHFmSFhFa0VEUC94VDRhOGhna29EZ0Q4TC91V3oxM2tEZ0IvKzlRUUFmMXI4S1FPQUgvNGFJcWdrQVBpejQwOGNBUHp3LzdlM3Zzb1RBUHp3MzhXL1hxSUE0SWQvSDMrS0FPQ0gveEQrS1NLWUlBRDQ0VCtNUDI4QThNUGY3c3U0QWNBUC95bjg2K1VKQUg3NDcrRFBFd0Q4OEQrQWZ4RXhBUGpoNzRwL01XSUUwd1FBUC93bjhDK2VmaEUwQVBqaDc0QS9aZ0R3dzk4UmY2Z0E0SWUvTC82eEloZ25BUGpoUHdOLzhBRGdoLzg0L3NBQndBLy9hZnlMcDU5SERBQisrTHZoRHhFQS9QQ2ZpMytNQ0VZTUFINzQrK01QRWdEODhKK0hQMEFBODhSLzdPOVMvRWRmKzBMOFIxOTdodmdYVHo0TEdrQ2wrUHY4OWNYZjY3Vjc0dS8xMmpQQ0h6T0FBUGdQUmxBQS8vMEl5dUhmdlBaTThNY0xJQkQrZXhFVXhMK05vRHord3hIVWh6OVdBRE85NSs4VXdKbjMvR2NIME9HZXYxOEFkZUtQRTBCUS9CdE1BK0EvR0VFQi9Qc1IxSXMvUmdDVlArb2NMb0JWK1FCMkhtK1dDYUJ1L1BNUFlBYlArWWNKWUZVK2dEdlA5d2NOb0JMOGl5ZWZSZzJnbmcrNXlnZXdLaC9BQXg5d0RSWkFSZmlEQmxEWEo3eGxBMWlWRCtEQUo3eURCRkFaL29BQjFIZThvVndBcXhFRHVDa2ZRSVg0Z3dWUTU5bWVNZ0dzUmd6Z3Bud0FsZUlQRkVEZEI5dUd3TDgrMkRZRS9oSVJ6QUYva0FEcVA5VTVTQUQvSDJVb0Y4Qk4rUUFxeHg4Z2dQa2NhUjRDL3lVUmREM1NIQm4vNHZFblFRT285RHovRVBqUGlhRHZlZjZvK0dNR01JTXZzMXh5ejMvcVBQOGw5L3luenZOSHVPZmZ4Ujh2QU4va1N2Tk5yaEw0WXdVQVAvdzk4Y2NKQUg3NHo4QS8rd0RhQ09DSHYwTDhGUVFBUC95SDhRY1BBSDc0aitOZlBQNDRhZ0R3dzM4YWY5QUE0SWUvRy80d0FXd2pnQi8rZXZDUEhBRDg4SGZIbnljQStPRi9BSCtPQU9DSC93RCtjQUhjaXdCKytDZkdQMTBBOE1OL0JIL3NBT0NIL3dUK3hhT1BZZ2JRUmdBLy9KWGdyeWdBK09HL3haOHdBUGpoMytJUEg4QitCUEREUHgzK2lRT0FILzU5L0drQ3VJMEFmdmlueFY5WEFQQ254cDg3QVBqVDQwOFh3Q1lDK09HZkNQLzBBY0FQZitZQTFoSEFEMy9hQU9EUGpYL3g2TVBjQWV4SEFELzhDUU80alFCKytBVUFmeEw4QXVnU0FmendwdzBBL3JENEJYQXFBdmpoenhwQUd3SDg4R2NPNE9FSTRJYy9iUUR3engyL0FNNk9BSDc0MHdZQVAvd0NnQjkrQWNBUHZ3RGdudzErQVpRT0FINzQwd1lBUC94cEE0QWYvclFCd0ErL0FPQ0hYd0R3ZTlRcEFQamhUeHdBL1BDbkRRQisrQk1HY0ZFODhLYzR6eStBUGhIQUQzK21BUFlpZ0IvK2pBRnNRb0IvdGo5ZElvREJRb0MvMWw5c0U4RGdFY0NmSFgvYUFMWWh3Ri9EVDVRTG9KWVEvR2NXQWFTUHdYOWpGSUJkK3lmVUFyQnREUFBGNy9vSm9Pam1nTjkxRXNCNFFWU0EzM1VRUUdWUkRJZmYreXNBTXdHWUNjQk1BR1lDTUJPQW1RRE1CR0FtQURNQm1BbkFUQUJtQWpBVGdKa0F6QVJnQXZBbW1BRE1CR0FtQURNQm1BbkFUQUJtQWpBVGdKa0F6QVJnSmdBekFaZ0p3RXdBWmdJd205ditCVlZaaGQyNGZLSzFBQUFBQUVsRlRrU3VRbUNDIiwKICAgICAgInNpemVzIjogIjE5MngxOTIiLAogICAgICAidHlwZSI6ICJpbWFnZS9wbmciLAogICAgICAicHVycG9zZSI6ICJhbnkgbWFza2FibGUiCiAgICB9LAogICAgewogICAgICAic3JjIjogImRhdGE6aW1hZ2UvcG5nO2Jhc2U2NCxpVkJPUncwS0dnb0FBQUFOU1VoRVVnQUFBZ0FBQUFJQUNBSUFBQUI3R2tPdEFBQVluVWxFUVZSNDJ1M2Q2M0lqMVJtR1VhN0NwdWJpQWdrUWNyekZrSE5nQWdJeU9VREl2WkJFSGcvanNjZVcxTjI3djIrL3E2dWVQLzRucWJ2WDYzSzU5YzZ6WjgrK2x5UkpXYjNqVFpBa3lRQ1FKRWtHZ0NSSk1nQWtTWklCSUVtU0RBQkprbVFBU0pJa0EwQ1NKQmtBa2lUSkFKQWtTUWFBSkVreUFDUkprZ0VnU1pJTUFFbVNaQUJJa2lRRFFKSWtHUUNTSk1rQWtDVEpBSkFrU1FhQUpFa3lBQ1JKa2dFZ1NaSU1BRW1TWkFCSWtpUURRSklrR1FDU0pNa0FrQ1JKQm9Ba1NUSUFKRW1TQVNCSmtnd0FTWkprQUVpU0pBTkFraVFaQUpJa3lRQ1FKTWtBa0NSSkJvQ2tQcjM3eTI4dTZ4Zi91amp2dTJRQVNOb005bThmNkp0MVdvRC8zZjc1YUQ1SHlRQ1FkREx5MzA2QnYzRWdHUUFTNk0rQ2ZuNzg3L1R6Zjl6SitTSVpBRkpmOEgvMTd4WFF6OFAvb1p4UGtnRWcxY1gremVDL0N2NUdnV1FBU0xYQmgvOHcvTy8yOTJQT1M4a0FrUFpCSC82NzRmOW16bGZKQUpDMkJ4LytwZkEzQ0NRRFFCcURQdnhMNDI4TVNBYUF0RDc2OEcrRi81MSs5c0w1THdOQWdqNzgwL0IvTTllRkRBQnBhdmkvZ3ovOEg4MTFJZ05BbWdyOTcrQVAveWZ4Tndaa0FFalR3UTkvK0wrNE9OZVREQUNwSGZyd2gvOHkvSTBCR1FCU1MvamhELzhYSy9hM1Y3bnVaQUJJWmVHSFAveTN3ZDhRa0FFZ2xZVWYvdkRmSG45RFFBYUFWQVo5K01OL1BQN0dnQXdBYVhmNDRRLy9mZkUzQkdRQVNNUGhoei84NitEL3FvKy9kajNMQUpEZ0QvODAvRzl6WGNzQWtGYUhILzd3cjQyL0lTQURRRm9kZnZqRHZ3LysvKy82WmE1N0dRQUNQL3poSDRiL3RTRWdBMERnaHovOGMvRTNCR1FBQ1A3d2gzOHcva2FBREFDQkgvN3dEOFgvcHErT3VWL0lBTkFjOFAvNlAvQ0hQL3hQeFAvMTNEOWtBQWorOElkL0dQNUdnQXdBOVlVZi92Q0gveUw4RFFFWkFJSS8vT0Vmakw4UklBTkFQZUNIUC96aHZ6citob0FNQU1FZi92QVB4dDhJa0FHZ2V2RERILzd3SDRML3NaOStlY3g5U0FhQTRBOS8rSWZoYndUSUFCRDg0US8vVVB5TkFCa0EyZ2QrK01NZi9ydmpid2pJQUJEODRRLy9ZUHlOQUJrQWdqLzg0UitLdnhFZ0EwRGJ3UTkvK01PL05QNkdnQXdBd1IvKzhBL0czd2lRQVNENHd4LytvZmpmZEhCZmt3RWcrTU1mL21uNDMrYitKZ05BNThFUGYvakR2ejMraG9BTUFNRWYvdkFQeHQ4SWtBRWcrTU1mL3FINEd3RXlBQVIvK01NL0ZIOGpRQVlBL09FUGYvaUg0bThFR0FEZUNQakRILzd3RDhYZkNEQUFCSC80d3gvK29mZ2JBUWFBa3VHSFAvemhINDMvOVVkZnZNcjkwZ0FRL09FUGYvaUg0VzhFR0FDQ1AvemhELzlRL0kwQUEwRHdoei84NFIrS3Z4RmdBQWorOEljLy9FUHhOd0lNQU1FZi92Q0hmeWorUm9BQklQakRILzd3RDhYZkNEQUFCSC80d3gvK29mZ2JBUWFBNEE5LytNTS9GUCtiUG5lL05RQUVmL2pESC81cCtOL212bXNBeU9OOTRROS8rSWZoYndBWUFJSS8vT0VQLzBEOGpRQURRUENIUC96aEg0cS9FV0FBQ1A3d2h6LzhRL0UzQWd3QXdSLys4SWQvS1A1R2dBRWcrTU1mL3ZBUHhkOElNQUFFZi9qREgvNmgrQnNCQm9EZ0QzLzR3ejhVZnlQQUFORG9BUUIvK01NZi9rWHdOd0FNQU1FZi92Q0hmeUQrMXgvKzlaajd0Z0VnK01NZi92QVB3OThJTUFBRWYvakRILzZoK0JzQkJvRGdEMy80d3o4VWZ5UEFBTkNhQXdEKzhJYy8vQnZoYndBWUFJSS8vT0VQLzBEOGpRQURRUENIUC96aEg0cS9FV0FBQ1A3d2h6LzhRL0UzQWd3QW5Uc0E0QTkvK01OL0V2d05BQU5BOEljLy9PRWZpTDhSWUFBSS92Q0hQL3hEOGIvKzhQa3g5MzBEUVBDSFAvemhINGEvRVdBQTZLRUJBSC80d3gvK0FmZ2JBQVlBL09FUGYvakRQeEIvSThBQWdELzg0UTkvK0lmaWJ3UVlBQVlBL09FUGYvaUg0bThBR0FEd2h6Lzg0US8vUVB5TkFBTUEvdkNIUC96aEg0cS9FV0FBWkEwQStNTWYvdkNIdndGZ0FNQWYvdkNIUC95VDhUY0NEQUQ0d3gvKzhJZC9LUDdIUHZpTUZ3YkFoQU1BL3ZDSFAvemgveWorQm9BQkFILzR3eC8rOEEvRTN3Z3dBQXdBK01NZi92QVB4ZDhBTUFEZ0QzLzR3eC8rZ2ZnYkFRWUEvT0VQZi9qRFB4Ui9JOEFBTUFEZ0QzLzR3ejhVZndQQUFJQS8vT0VQZi9nSDRtOEVHQUNoQXdEKzhJYy8vT0Z2QUJnQThJYy8vT0VQLzBEOGpRQURJR2dBd0IvKzhJYy8vQTBBQXdEKzhJYy8vT0VmanI4UllBQk1QZ0RnRDMvNHd4LytiKzlUdmhnQThJYy8vT0VQL3pUOGIrT01BUUIvK01NZi92QVB3OThJTUFBbUdnRHdoei84NFEvL2MvQTNBQXdBK01NZi92Q0hmeUQrUm9BQjBId0F3Qi8rOEljLy9DL0Yzd0F3QU9BUGYvakRILzZCK0JzQkJrRERBUUIvK01NZi92QmZBMzhEd0FCb05BRGdEMy80d3gvK2ErRnZBQmdBOEljLy9PRVAvMEQ4alFBRG9NRUFnRC84NFE5LytHK0J2d0ZnQU1BZi92Q0hQL3dEOFRjQ0RJQ2lBd0QrOEljLy9PRy9OZjRHZ0FFQWYvakRILzd3RDhULytpZC9PY1lsQTZEQUFJQS8vT0VQZi9pUHhOOEFNQURnRDMvNHd4LytnZmdiQVFiQXpnTUEvdkNIUC96aHZ4ZitCb0FCc05NQWdELzg0UTkvK08rSnZ3RmdBTUFmL3ZDSFAvd0Q4VGNDRElEQkF3RCs4SWMvL09GZkJYOER3QUNBUC96aEQzLzRCK0p2QkJnQUF3WUEvT0VQZi9qRHZ5TCtCb0FCc09FQWdELzg0UTkvK0ZmRjN3QXdBT0FQZi9qREgvNkIrQnNCQnNBR0F3RCs4SWMvL09IZkFYOER3QUNBUC96aEQzLzRCK0ovMDUvNVpRQVVHZ0R3aHovODRRLy9JZmdiQUFaQW5RRUFmL2pESC83d0g0YS9BV0FBd0IvKzhJYy8vQVB4TndJTWdQMEhBUHpoRDMvNHczOFgvQTBBQTJDL0FRQi8rTU1mL3ZEZkRYOER3QUNBUC96aEQzLzRCK0p2QkJnQTR3Y0EvT0VQZi9qRHZ3VCtCb0FCTUc0QXdCLys4SWMvL012Z2J3QVlBUENIUC96aEQvOUEvSzlleGpVRFlMc0JBSC80d3gvKzhDK0p2d0ZnQUd3M0FPQVBmL2pESC81bDhUY0FESUJ0QmdEODRROS8rTU8vTlA0R2dBRUFmL2pESC83d0Q4VGZDREFBMWgwQThJYy8vT0VQL3piNFgvMzRUM3d6QUZZWUFQQ0hQL3poRC85VytCc0FCZ0Q4NFE5LytNTS9FSDhqd0FCWU5nRGdEMy80d3gvK2JmRTNBQXlBeXdZQS9PRVBmL2pEdnpYK0JvQUJjUDRBZ0QvODRROS8rTGZIM3dBd0FPQVBmL2pESC82QitCc0JCc0RwQXdEKzhJYy8vT0UvRmY0R2dBSHc5QUNBUC96aEQzLzRUNGUvQVdBQVBENEE0QTkvK01NZi9sUGlid0FZQUc4ZkFQQ0hQL3poRC85cDhUY0FEQUQ0d3gvKzhJZC9JUDVHZ0FGd2Z3REFILzd3aHovOEkvQTNBQXlBRFFZQS9PRVBmL2pEdnpyK0JvQUJzUElBZ0QvODRROS8rSGZBM3dBd0FPQVBmL2pESC82QitOLzBSd1BBQUhnR2YvakRILzd3RDhQZkFEQUFGZzRBK01NZi92Q0hmMGY4RFFBRFlNRUFnRC84NFE5LytIZkYzd0F3QUM0Y0FQQ0hQL3poRC8vTytCc0FCc0FGQXdEKzhJYy8vT0hmSFg4RHdBQ0FQL3poRDMvNEIrSnZCQmdBOEljLy9PRVAvMUQ4RFFBREFQN3doei84NFIrSXZ3RmdBTUFmL3ZDSFAvd0Q4VGNBREFENHd4Lys4SWQvSVA0R2dBRUFmL2pESC83d0Q4VGZBREFBNEE5LytNTWYvb0g0R3dEd2h6Lzg0UTkvK0FmaW56NENEQUQ0dy85LzNSNUorTDkrSk9ILzZqWERILzRHZ0FFQS94ejhMejI2NDMvUmEyNk8vOFdmTmZ5ajhEY0E0Z2NBL0dmSGY4MmpDLzZydnVZbStLLzZtdUVmZ2YvViszOHdBSElIQVB4bnhuK3JvekwrV3g0cCtKODlCT0RmRm44RElIWUF3SDlXL0VjZGxmQWZlVlRDZjlocmh2K1UrQnNBQmdEODRiOWdCR1RoZi80STZJLy9XMGNBL052amJ3QVlBUENILzM1RG9DSCtwNCtBYmZEZjlUWERmeXI4RFFBREFQN044YTl5Sk9ILzlBaVlELzg3cnh2K1UrQnZBQmdBOFBlYi8vZ1JNQUgrYng4QmMrTy96Z0NBZndYOERRRDR3eC8rWXdmQVJQamZId0h6L00xL3V4RUEveXI0SjQ4QUF3RCs4Qjg5QWliRS80Y1JrSVAvNVNNQS90WHdOd0FNQVBqRGYvc1JVUHovL01zTWdDYjRuejhDNEY4UmZ3UEFBSUMvaC94c093QW14MysxRVREd0lUOWpCd0Q4cStKdkFCZ0E4SWYvZGlPZzRPTjlTdzZBaHZpZk5nTGdYeGwvQThBQWdIL29zLzAzSHdCQitDOGFBU3QvcVUrZEFRRC82dmdiQUFZQS9PRy9EUXdHd1BUNHYzMEV3TDhEL2dhQUFRRC95Yi9TdC9jQU9NdzdBRGI0U3Q4YUF3RCtYZkEzQUF3QStEZkFQM01BSEw3dmVDekZ2L2NBZ0g4bi9BMEFBd0QrRGZEdk9BQ1dqWUREdkFOZ012eC9HQUR3NzRhL0FaQStBT0FQLzNJRDRERHZBSGdDLzY0RDRHWUV3TDhiL2xmdi85NEFpQjBBOEcrQmY5WUFPTXc3QUU3QVAzNEF3SDhvL2daQTZnQ0FmeHY4Y3diQVlkNEJjQ0wrMFFNQS9zUHhOd0FTQndEOFcrR2ZNUURtd1AvQkVYQUcvckVEQVA2NzRHOEFwQTBBK0xmRGYvNEJjSmgzQUp5SmYrUUFnUDl1K0JzQUJnRDhpK1AvN3NkZlR6d0FEdk1PZ0F2d2p4c0E4TjhWZndQQUFJQi9jZnpuSFFDSEowdkRQMm9Bd0g5My9BMEFBd0QreGZHZmN3QWM1aDBBQy9DUEdRRHdMNEcvQVdBQXdMODQvdk1OZ0lNQmtEd0E0RjhHZndQQUFJQi9jZnc3ajRBbCtCc0E4SWYvdHZnYkFBWUEvQnZnMzNFQUxNVS9jd0E4UHpibEFJQi9PZndOQUFNQS9nM3d2MjQvQUE0WGw0Yi9sQU1BL2lYeE53QU1BUGczd0wvM0FEZ1lBR2ZnUDkwQWdIOVovQTBBQXdEK0RmRHZOZ0xXd2o5akFEeC9NUGpEZjJ2OERRQURBUDVOOE84M0FBN3I5TkVYY2ZoUE1RRGdYeDUvQThBQWdIOFQvTHVNZ0xYeG4zY0FQSDh5K01OL1Mvd05BQU1BL28zdzd6RUExc1cvd3dqWUF2KzJBd0QrYmZBM0FBd0ErRGZDdi9vSTJBci91UWJBODdPQ1AveTN3dDhBaUI4QThPK0cvMDFmUmVGZmVRUnNpWC9WRVFEL09mQy9ldTkzQmtEdUNJQi9WL3h2bTI0QVBJSi94UkV3QXY5cUF3RCs4RGNBMmc4QStIZkh2OUlBR0lWL3BSRXdDdjlxSXdEK2MrQnZBTVFPQVBqUGdIK1ZJVEFhL3dvallEVCt4ejc0ekcvKzhGOE5md1BBQUlEL0JQanZOUUpHL00yLzRnallDLy9YZ3ovOGwrSnZBQmdBOEo4RS85RWpvQUwrZTR5QUN2aVBIZ0h3bnhOL0E4QUFnUDlFK0k4WUFsczg1R2Q1bngvcitILytsK0kvWWdoNHlNL2MrQnNBQmdEOEo4Ui9xeUZRR2YvWDJ4ZitzZmh2TVFJODJ6OERmd1BBQUlEL3hQZ2ZlL21sUE12US83SU4vbXVNZ2JXKzBuY1UvbXVOQVYvcG00Vy9BV0FBd0Q4QS84ZDZHUHFINm9mL0thUGcrTE5GNE5mQy8yNTNBVDhaZXZoSDRHOEFHQUR3RDhiLzlPYkIvMTRoK0M4Sy9sUGlid0FZQWZDSFAvemhEMy80R3dBR0FQemhEMy80dzM5Mi9BMEFBd0QrOEljLy9PRWZpTDhCWUFEQUgvN3doei84QS9FM0FBd0ErTU1mL3ZDSGZ5RCtCb0FCQUgvNHd4Lys4QS9FM3dBd0FPQVBmL2pESC82QitCc0E0UVBnemdpQVAvemhEMy80dzk4QUNCc0E4SWMvL09FUC94ajhEUUFENEdZQXdCLys4SWMvL0tQd053QU1nQlVIQVB6aEQzLzR3NzhML2dhQUFiRFNBSUEvL09FUGYvaDN3di9xdmQ4YUFBYkFNL2pESC83d2gzOFkvZ2FBQWJCd0JNQWYvdkNIUC96aGJ3Q0VEUUQ0d3gvKzhJZC9SL3dOQUFOZ3dRQ0FQL3poRDMvNGQ4WGZBREFBTGh3QThJYy8vT0VQLzg3NEd3QUd3QVVqQVA3d2h6Lzg0UTkvQXlCc0FNQWYvdkNIUC95NzQyOEFHQUJuRGdENHd4Lys4SWYvRFBnYkFBYkFHUU1BL3ZDSFAvemhQd3YrQm9BQmNPSUFnRC84NFE5LytNK0V2d0ZnQUp3d0F1QVBmL2pESC83d053RENCZ0Q4NFE5LytNTi9OdndOQUFQZ2lRRUFmL2pESC83d254Ri9BOEFBMkg0QXdCLys4SWMvL012aGJ3QVlBTnVPQVBqREgvN3doei84RFlDd0FRQi8rTU1mL3ZBdmliOEJZQUJzTndEZ0QzLzR3eC8rWmZFM0FBeUFiVVlBL09FUGYvakRILzRHUU5nQWdELzg0UTkvK0pmRzN3QXdBTllmQVBDSFAvemhELy95K0JzQUJzQzZBd0QrOEljLy9PSGZBbjhEd0FCWWJ3VEFILzd3aHovODRXOEFoQTBBK01NZi92Q0hmeHY4RFFBRFlKMEJBSC80d3gvKzhHK0YvOVdQUHVHWkFiQndCTUFmL3ZDSFAvemhid0NFRFFENHd4Lys4SWQvTy93TkFBTmcyUUNBUC96aEQzLzR0OFRmQURBQWlvd0ErTU1mL3ZDSFAvd05nTEFCQUgvNHd4Lys4QitKdndGZ0FCUVlBUENIUC96aEQvL1IrQnNBQnNET0l3RCs4SWMvL09FUGZ3TWdiQURBSC83d2h6Lzg5OERmQURBQWRod0I4SWMvL09FUGYvZ2JBR0VEQVA3d2h6Lzg0YjhYL2dhQUFiRFRBSUEvL09FUGYvanZpYjhCWUFEc01BTGdEMy80d3gvKzhEY0F3Z1lBL09FUGYvakRmMi84RFFBRFlQQUlnRC84NFE5LytNUGZBQWdiQVBDSFAvemhELzhLK0JzQUJzREFBUUIvK01NZi92Q3ZncjhCWUFBTUhBSHdoei84NFE5LytCc0FCZ0Q4NFE5LytNTi9GL3dOQUFPZ3p3aUFQL3poRDMvNHc5OEFDQnNBOEljLy9PRVAvOVh3TndBTWdCNGpBUDd3aHovODRROS9BeUJzQU1BZi92Q0hQL3hYeGQ4QU1BRHFqd0Q0d3gvKzhJYy8vQTJBc0FFQWYvakRILzd3WHgxL0E4QUFxRDBBNEE5LytNTWYvcHZnYndBWUFIVkhBUHpoRDMvNHd4LytCa0RZQUlBLy9PRVBmL2h2aHI4QllBRFVIQUh3aHovODRROS8rQnNBWVFNQS92Q0hQL3podnluK0JvQUIwR29Fd0IvKzhJYy8vT0Z2QUlTTkFQakRILzd3aHovOERZQ3dBUUIvK01NZi92RC9aS1Yrd3hjRG9FZndoei84NFE5LytCc0FCZ0Q4NFE5LytNUC9RdndOQUFOZ3doRUFmL2pESC83d2g3OEJFRFlBNEE5LytNTWYvay9oYndBWUFKT05BUGpESC83d2h6LzhEWUN3QVFCLytNTWYvdkEvQlg4RHdBQ1lhQVRBSC83d2h6Lzg0VzhBaEkwQStNTWYvdkNIUC93TkFBTUEvdkNIUC96aC95RCtCb0FCWUFUQUgvN3doei84WlFBRUR3RDR3eC8rOEEvQjN3QXdBSXdBK01NZi92Q0h2d3lBMEJFQWYvakRILzd3bHdFUU5nRGdEMy80d3o4SWZ3UEFBREFDNEE5LytNTWYvaklBQWtjQS9PRVBmL2pEWHdaQTJBQ0FQL3poRC84dy9BMEFBOEFJZ0QvODRROS8rTXNBQ0JzQjhJYy8vT0VQZnhrQUJnRDg0UTkvK00rT3Z3RmdBR2kxRVFCLytNTWYvdkNYQVJBMkF1QVBmL2pESC80eUFNSkdBUHpoRDMvNHcxOEdRTmdBZ0QvODRRLy9QdmdiQUFhQVZoa0I4SWMvL09FUGZ4a0FZU01BL3ZDSFAvemhMd01nYkFUQUgvN3doei84WlFDRURRRDR3eC8rOE8rRnZ3RmdBR2p4QUlBLy9PRVBmL2pMQUFnYkFQQ0hQL3poRDM4WkFHRURBUDd3aHovODRTOERJR3dBd0IvKzhJYy8vR1VBR0FEd2h6Lzg0VjhjZndQQUFGQ0ZBUUIvK01NZi92Q1hBUkEyQU9BUGYvakRILzR5QU1JR0FQemhEMy80dzE4R1FOZ0FnRC84NFE5LytNc0FDQnNBOEljLy9PRVBmeGtBWVFNQS92Q0hQL3poTHdNZ2JBREFILzd3aHovOFpRQ0VEUUQ0d3gvKzhCK012d0ZnQUdqdkFRQi8rTU1mL3ZDWEFSQTJBT0FQZi9qREgvNHlBTUlHQVB6aEQzLzR3MThHUU5nQWdELzg0UTkvK01zQUNCc0E4SWMvL09FUGZ4a0FZUU1BL3ZDSFAvemhMd01nYkFEQUgvN3doei84WlFDRURRRDR3eC8rOEllL0RJQ3dBUUIvK01NZi92Q1hBV0FBd0IvKzhJZS94L3ZLQURBQTRBOS8rTU1mL2pJQURBRDR3eC8rOEllL0RJRHdBUUIvK01NZi92Q1hBUkEyQU9BUGYvakRILzR5QU1JR0FQemhEMy80dzE4R1FOZ0FnRC84NFE5LytNc0FDQnNBOEljLy9PRVBmaGtBWVFNQS92Q0hQL3poTHdNZ2JBREFILzd3aHovOFpRQ0VEUUQ0d3gvKzhJZS9ESUN3QVFCLytNTWYvdUNYQVJBMkFPQVBmL2pESC80eUFNSUdBUHpoRDMvNHcxOEdRTmdBZ0QvODRROS84TXNBQ0JzQThJYy8vT0VQZnhrQXFqUlM0QTkvK01OZkJvQU1BZmpESC81ajhIZmZrUUdnZmlNQS92Q0hQL3hsQUNoc0NNQWYvdkMvR0gvM0Z4a0E2amtDNEE5LytNTmZCb0RDaGdEODRRLy9pL0IzSDVFQm9MNGpBUDd3aHovOFpRRElFSUEvL09IL09QN3VGeklBWkFqQUgvNUIrTHMveUFDUUVRQi8rTU5mTWdDVU9nVGdELy81OFhjZmtBRWdRd0QrOEEvQzMzVXZBMEM2TndUZ0QvOTU4WGVkeXdDUUhoMEM4SWYvWFBpN3JtVUFTQ05HQVB6aEQzL0pBRkRZRUlBLy9Jdmc3L3FWQVNDTkdnTHdoMzhCL0Yydk1nQ2trV01BL3ZEZkVYL1hwUXdBYVk4aEFILzQ3NFMvNjFBR2dMVG5FSUEvL0Fmajc3cVRBU0JOTVFUZ0QzL3d5d0NRd3NZQS9PRVBmUmtBVXRnUWdELzh3UzhEUUFvYkEvQ0hQL1JsQUVoaFF3RCs4QWUvREFCdmhJd0IrRWZpNy95WEFTRHAzaGlBLzV6NE84OGxBMEI2TlBqUGc3L3pXVElBcEdXREFQNHQ4SGUrU2dhQXRNMFlnSDg1L0oyWGtnRWdGUjhFOEY4RGYrZWRaQUJJalVZQi9DL0IzL2trR1FCUzQwRUEvMVB4ZDc1SUJvQmtHRXlNdjg5Zk1nQWtQVFVPbXVMdmM1UU1BRWxiRFlVZDhQZStTd2FBSkVreUFDUkprZ0VnU1pJTUFFbVNaQUJJa2lRRFFKSWtHUUNTSk1rQWtDUkpCb0FrU1RJQUpFbVNBU0JKa2d3QVNaSmtBRWlTWkFCSWtpUURRSklrR1FDU0pNa0FrQ1JKQm9Ba1NUSUFKRW1TQVNCSmtnd0FTWkprQUVpU0pBTkFraVFaQUpJa3lRQ1FKRWtHZ0NSSk1nQWtTWklCSUVtU0RBQkprbVFBU0pKa0FIZ1RKRWt5QUNSSmtnRWdTWklNQUVtU1pBQklraVFEUUpJa0dRQ1NKTWtBa0NSSkJvQWtTVElBSkVtU0FTQkprZ3dBU1pKa0FFaVNKQU5Ba2lRWkFKSWt5UUNRSkVrR2dDUkpNZ0FrU1RJQUpFbVNBU0JKa2d3QVNaSmtBRWlTSkFOQWtpUVpBSklreVFDUUpFa0dnQ1JKTWdBa1NaSUJJRW1TREFCSmttUUFTSklrQTBDU0pCa0FraVRKQUpBa1NRYUFKRWt5QUNSSk1nQWtTWklCSUVtU0RBQkprbVFBU0pJa0EwQ1NKQmtBa2lUSkFKQWtTUWFBSkVreUFDUkprZ0VnU1pJTUFFbVNaQUJJa2lRRFFKSWtHUUNTSk1rQWtDUkpCb0FrU1RJQUpFa3lBQ1JKa2dFZ1NaSU1BRW1TWkFCSWtxVGUvUmQ1YkVVVVlsckh2Z0FBQUFCSlJVNUVya0pnZ2c9PSIsCiAgICAgICJzaXplcyI6ICI1MTJ4NTEyIiwKICAgICAgInR5cGUiOiAiaW1hZ2UvcG5nIiwKICAgICAgInB1cnBvc2UiOiAiYW55IG1hc2thYmxlIgogICAgfQogIF0KfQo=">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+  html, body { height: 100%; background: #0C0C0C; font-family: 'Roboto', sans-serif; color: #F1F1F1; overflow: hidden; }
+  ::-webkit-scrollbar { width: 3px; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: #333; border-radius: 2px; }
+
+  #app { height: 100vh; height: 100dvh; display: flex; flex-direction: column; max-width: 480px; margin: 0 auto; position: relative; overflow: hidden; }
+
+  .status-bar { background: #111; padding: 10px 20px 6px; display: flex; justify-content: space-between; align-items: center; flex-shrink: 0; }
+  .status-time { font-size: 13px; font-weight: 600; }
+  .status-icons { display: flex; gap: 6px; align-items: center; }
+  .battery { width: 22px; height: 11px; border: 1.5px solid #F1F1F1; border-radius: 3px; padding: 1.5px; display: flex; align-items: center; }
+  .battery-fill { width: 75%; height: 100%; background: #00C853; border-radius: 1.5px; }
+
+  .screen { display: none; flex-direction: column; flex: 1; overflow: hidden; }
+  .screen.active { display: flex; }
+
+  .list-header { background: #1A1A1A; padding: 14px 20px 12px; display: flex; align-items: center; justify-content: space-between; border-bottom: 1px solid #222; flex-shrink: 0; }
+  .list-header h1 { font-size: 22px; font-weight: 700; letter-spacing: -0.3px; }
+  .list-header-icons { display: flex; gap: 14px; }
+  .icon-btn { background: none; border: none; cursor: pointer; color: #9E9E9E; padding: 6px; display: flex; align-items: center; }
+
+  .chat-list { flex: 1; overflow-y: auto; background: #1A1A1A; }
+  .chat-item { display: flex; align-items: center; gap: 14px; padding: 14px 20px; cursor: pointer; background: #1A1A1A; border-bottom: 1px solid #222; transition: background 0.15s; user-select: none; }
+  .chat-item:active { background: #222; }
+  .chat-item:last-child { border-bottom: none; }
+
+  .avatar { width: 50px; height: 50px; border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 19px; font-weight: 700; color: #fff; flex-shrink: 0; }
+  .avatar-4000 { background: linear-gradient(135deg, #1A73E8, #0D47A1); }
+  .avatar-4002 { background: linear-gradient(135deg, #00897B, #004D40); }
+
+  .chat-info { flex: 1; min-width: 0; }
+  .chat-top { display: flex; justify-content: space-between; align-items: center; margin-bottom: 4px; }
+  .chat-name { font-weight: 500; font-size: 16px; }
+  .chat-name.unread { font-weight: 700; }
+  .chat-time { font-size: 12px; color: #9E9E9E; }
+  .chat-time.unread { color: #1A73E8; font-weight: 600; }
+  .chat-bottom { display: flex; justify-content: space-between; align-items: center; }
+  .chat-preview { font-size: 14px; color: #9E9E9E; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; max-width: calc(100% - 28px); }
+  .chat-preview.unread { color: #F1F1F1; font-weight: 500; }
+  .unread-badge { background: #1A73E8; color: #fff; border-radius: 12px; min-width: 20px; height: 20px; display: flex; align-items: center; justify-content: center; font-size: 11px; font-weight: 700; flex-shrink: 0; padding: 0 4px; }
+
+  .fab { position: fixed; bottom: 28px; right: 20px; width: 56px; height: 56px; border-radius: 50%; background: linear-gradient(135deg, #1A73E8, #1557B0); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; box-shadow: 0 4px 16px rgba(26,115,232,0.45); z-index: 10; }
+  @media (min-width: 480px) { .fab { right: calc(50% - 220px); } }
+
+  .chat-header { background: #1A1A1A; padding: 10px 16px; display: flex; align-items: center; gap: 12px; border-bottom: 1px solid #222; flex-shrink: 0; }
+  .back-btn { background: none; border: none; cursor: pointer; color: #9E9E9E; padding: 4px 2px; display: flex; }
+  .header-info { flex: 1; }
+  .header-name { font-weight: 600; font-size: 17px; }
+  .header-status { font-size: 12px; color: #9E9E9E; transition: color 0.3s; }
+  .header-status.typing { color: #00C853; }
+  .header-actions { display: flex; gap: 10px; }
+
+  .messages-area { flex: 1; overflow-y: auto; padding: 16px 14px; display: flex; flex-direction: column; gap: 2px; background: #0C0C0C; }
+  .empty-state { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100%; gap: 12px; opacity: 0.5; }
+  .empty-icon { width: 64px; height: 64px; border-radius: 50%; background: #1A1A1A; display: flex; align-items: center; justify-content: center; }
+  .empty-text { color: #9E9E9E; font-size: 15px; }
+
+  .msg-time-label { text-align: center; font-size: 11px; color: #9E9E9E; margin: 10px 0 6px; font-weight: 500; }
+  .msg-row { display: flex; }
+  .msg-row.me { justify-content: flex-end; }
+  .msg-row.them { justify-content: flex-start; }
+
+  .bubble { max-width: 78%; padding: 10px 14px; margin-bottom: 2px; }
+  .bubble.me { background: linear-gradient(135deg, #1A73E8, #1557B0); border-radius: 18px 18px 4px 18px; box-shadow: 0 2px 8px rgba(26,115,232,0.3); }
+  .bubble.them { background: #2A2A2A; border-radius: 18px 18px 18px 4px; }
+
+  .bubble-text { font-size: 15px; line-height: 2.0; color: #F1F1F1; white-space: pre-wrap; word-break: break-word; }
+  .bubble.me .bubble-text { color: #fff; }
+
+  .bubble-meta { display: flex; align-items: center; justify-content: flex-end; gap: 4px; margin-top: 4px; }
+  .bubble-time { font-size: 11px; color: rgba(255,255,255,0.65); }
+  .bubble.them .bubble-time { color: #9E9E9E; }
+
+  .typing-row { display: flex; justify-content: flex-start; padding: 4px 0; }
+  .typing-bubble { background: #2A2A2A; border-radius: 18px; padding: 10px 14px; display: flex; gap: 5px; align-items: center; }
+  .typing-dot { width: 8px; height: 8px; border-radius: 50%; background: #888; animation: bounce 1.2s infinite; }
+  .typing-dot:nth-child(2) { animation-delay: 0.2s; }
+  .typing-dot:nth-child(3) { animation-delay: 0.4s; }
+  @keyframes bounce { 0%,60%,100%{transform:translateY(0)} 30%{transform:translateY(-5px)} }
+
+  @keyframes fadeInUp { from{opacity:0;transform:translateY(8px)} to{opacity:1;transform:translateY(0)} }
+  .fade-in { animation: fadeInUp 0.25s ease both; }
+
+  .input-bar { background: #1A1A1A; border-top: 1px solid #222; padding: 10px 14px 20px; flex-shrink: 0; display: flex; align-items: flex-end; gap: 10px; }
+  .input-wrap { flex: 1; background: #2A2A2A; border-radius: 22px; padding: 10px 16px; min-height: 42px; display: flex; align-items: center; }
+  .msg-input { background: none; border: none; resize: none; width: 100%; color: #F1F1F1; font-size: 16px; font-family: 'Roboto', sans-serif; line-height: 1.4; max-height: 100px; overflow-y: auto; outline: none; }
+  .msg-input::placeholder { color: #666; }
+  .send-btn { width: 44px; height: 44px; border-radius: 50%; background: #2A2A2A; border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; flex-shrink: 0; transition: all 0.2s; }
+  .send-btn.active { background: linear-gradient(135deg, #1A73E8, #1557B0); box-shadow: 0 2px 8px rgba(26,115,232,0.4); }
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="status-bar">
+    <span class="status-time" id="statusTime">00:00</span>
+    <div class="status-icons">
+      <svg width="16" height="12" viewBox="0 0 16 12" fill="#F1F1F1"><rect x="0" y="4" width="3" height="8" rx="1"/><rect x="4.5" y="2.5" width="3" height="9.5" rx="1"/><rect x="9" y="1" width="3" height="11" rx="1"/><rect x="13.5" y="0" width="2.5" height="12" rx="1" opacity="0.3"/></svg>
+      <svg width="16" height="12" viewBox="0 0 18 12" fill="#F1F1F1"><path d="M9 2C11.5 2 13.8 3.1 15.4 4.8L17 3.2C14.9 1.2 12.1 0 9 0S3.1 1.2 1 3.2L2.6 4.8C4.2 3.1 6.5 2 9 2z"/><path d="M9 6c1.4 0 2.7.6 3.6 1.5L14.2 6C12.8 4.7 11 4 9 4S5.2 4.7 3.8 6L5.4 7.5C6.3 6.6 7.6 6 9 6z"/><circle cx="9" cy="10" r="2"/></svg>
+      <div class="battery"><div class="battery-fill"></div></div>
+    </div>
+  </div>
+
+  <!-- LIST SCREEN -->
+  <div class="screen active" id="listScreen">
+    <div class="list-header">
+      <h1>Сообщения</h1>
+      <div class="list-header-icons">
+        <button class="icon-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M15.5 14h-.79l-.28-.27A6.471 6.471 0 0 0 16 9.5 6.5 6.5 0 1 0 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z"/></svg>
+        </button>
+        <button class="icon-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="chat-list" id="chatList"></div>
+    <button class="fab">
+      <svg width="24" height="24" viewBox="0 0 24 24" fill="white"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+    </button>
+  </div>
+
+  <!-- CHAT SCREEN -->
+  <div class="screen" id="chatScreen">
+    <div class="chat-header">
+      <button class="back-btn" id="backBtn">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 11H7.83l5.59-5.59L12 4l-8 8 8 8 1.41-1.41L7.83 13H20v-2z"/></svg>
+      </button>
+      <div id="chatAvatar" class="avatar" style="width:40px;height:40px;font-size:15px;"></div>
+      <div class="header-info">
+        <div class="header-name" id="chatName"></div>
+        <div class="header-status" id="chatStatus">Мобильный телефон</div>
+      </div>
+      <div class="header-actions">
+        <button class="icon-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M6.62 10.79c1.44 2.83 3.76 5.14 6.59 6.59l2.2-2.2c.27-.27.67-.36 1.02-.24 1.12.37 2.33.57 3.57.57.55 0 1 .45 1 1V20c0 .55-.45 1-1 1-9.39 0-17-7.61-17-17 0-.55.45-1 1-1h3.5c.55 0 1 .45 1 1 0 1.25.2 2.45.57 3.57.11.35.03.74-.25 1.02l-2.2 2.2z"/></svg>
+        </button>
+        <button class="icon-btn">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor"><path d="M12 8c1.1 0 2-.9 2-2s-.9-2-2-2-2 .9-2 2 .9 2 2 2zm0 2c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2zm0 6c-1.1 0-2 .9-2 2s.9 2 2 2 2-.9 2-2-.9-2-2-2z"/></svg>
+        </button>
+      </div>
+    </div>
+    <div class="messages-area" id="messagesArea"></div>
+    <div class="input-bar">
+      <button class="icon-btn" style="padding:8px 4px;">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M20 5H4v14l9.29-9.29c.39-.39 1.02-.39 1.41 0L20 15.01V5zm-9 8.17L7.83 17H4v-1l.01-.01L11 9.17zM20 19H8.83l4-4L20 21.01V19zM2 3v18h18V3H2z"/></svg>
+      </button>
+      <div class="input-wrap">
+        <textarea class="msg-input" id="msgInput" rows="1" placeholder="Сообщение"></textarea>
+      </div>
+      <button class="send-btn" id="sendBtn">
+        <svg width="20" height="20" viewBox="0 0 24 24" fill="#555" id="sendIcon">
+          <path d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"/>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<script>
+const INITIAL_TICKET = 235893;
+const TICKET_INCREMENT = 634;
+
+let state = {
+  ticket: INITIAL_TICKET,
+  msgs4000: [],
+  msgs4002: [],
+  unread4002: 0,
+  currentChat: null
+};
+
+function save(key, value) {
+  try { localStorage.setItem(key, JSON.stringify(value)); } catch(e) {}
+}
+function load(key, def) {
+  try { const v = localStorage.getItem(key); return v !== null ? JSON.parse(v) : def; } catch(e) { return def; }
+}
+
+function loadState() {
+  state.ticket    = load('rtec_ticket', INITIAL_TICKET);
+  state.msgs4000  = load('rtec_msgs4000', []);
+  state.msgs4002  = load('rtec_msgs4002', []);
+  state.unread4002= load('rtec_unread4002', 0);
+}
+
+function saveAll() {
+  save('rtec_ticket',     state.ticket);
+  save('rtec_msgs4000',   state.msgs4000);
+  save('rtec_msgs4002',   state.msgs4002);
+  save('rtec_unread4002', state.unread4002);
+}
+
+function padTicket(n) { return n.toString().padStart(9, '0'); }
+
+function fmtFull(iso) {
+  const d = new Date(iso);
+  const dd = d.getDate().toString().padStart(2,'0');
+  const mm = (d.getMonth()+1).toString().padStart(2,'0');
+  const yy = d.getFullYear();
+  const HH = d.getHours().toString().padStart(2,'0');
+  const MM = d.getMinutes().toString().padStart(2,'0');
+  return `${dd}.${mm}.${yy}  ${HH}:${MM}`;
+}
+
+function fmtTime(iso) {
+  const d = new Date(iso);
+  return d.getHours().toString().padStart(2,'0') + ':' + d.getMinutes().toString().padStart(2,'0');
+}
+
+function fmtListTime(iso) {
+  const d = new Date(iso);
+  const now = new Date();
+  if (d.toDateString() === now.toDateString()) return fmtTime(iso);
+  return d.getDate().toString().padStart(2,'0') + '.' + (d.getMonth()+1).toString().padStart(2,'0');
+}
+
+function updateClock() {
+  const now = new Date();
+  document.getElementById('statusTime').textContent =
+    now.getHours().toString().padStart(2,'0') + ':' + now.getMinutes().toString().padStart(2,'0');
+}
+updateClock();
+setInterval(updateClock, 10000);
+
+function renderList() {
+  const chats = [
+    { id: '4000', msgs: state.msgs4000, unread: 0 },
+    { id: '4002', msgs: state.msgs4002, unread: state.unread4002 }
+  ].sort((a,b) => {
+    const la = a.msgs[a.msgs.length-1];
+    const lb = b.msgs[b.msgs.length-1];
+    const ta = la ? new Date(la.time).getTime() : 0;
+    const tb = lb ? new Date(lb.time).getTime() : 0;
+    return tb - ta;
+  });
+
+  const list = document.getElementById('chatList');
+  list.innerHTML = chats.map(c => {
+    const last = c.msgs[c.msgs.length - 1];
+    const preview = last
+      ? (last.from === 'me' ? 'Вы: ' : '') + last.text.split('\n')[0]
+      : 'Нет сообщений';
+    const time = last ? fmtListTime(last.time) : '';
+    const hasUnread = c.unread > 0;
+    return `
+      <div class="chat-item" onclick="openChat('${c.id}')">
+        <div class="avatar avatar-${c.id}">${c.id.slice(-2)}</div>
+        <div class="chat-info">
+          <div class="chat-top">
+            <span class="chat-name${hasUnread?' unread':''}">${c.id}</span>
+            <span class="chat-time${hasUnread?' unread':''}">${time}</span>
+          </div>
+          <div class="chat-bottom">
+            <span class="chat-preview${hasUnread?' unread':''}">${escHtml(preview)}</span>
+            ${hasUnread ? `<div class="unread-badge">${c.unread}</div>` : ''}
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function escHtml(str) {
+  return str.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;');
+}
+
+function openChat(id) {
+  state.currentChat = id;
+  if (id === '4002') {
+    state.unread4002 = 0;
+    save('rtec_unread4002', 0);
+  }
+  document.getElementById('chatName').textContent = id;
+  const av = document.getElementById('chatAvatar');
+  av.className = `avatar avatar-${id}`;
+  av.textContent = id.slice(-2);
+  document.getElementById('msgInput').placeholder = id === '4000' ? 'Введите 4 цифры...' : 'Сообщение';
+
+  document.getElementById('listScreen').classList.remove('active');
+  document.getElementById('chatScreen').classList.add('active');
+
+  renderMessages();
+  scrollBottom();
+  setTimeout(() => document.getElementById('msgInput').focus(), 200);
+}
+
+document.getElementById('backBtn').onclick = () => {
+  state.currentChat = null;
+  document.getElementById('chatScreen').classList.remove('active');
+  document.getElementById('listScreen').classList.add('active');
+  renderList();
+};
+
+function renderMessages() {
+  const msgs = state.currentChat === '4000' ? state.msgs4000 : state.msgs4002;
+  const area = document.getElementById('messagesArea');
+
+  if (msgs.length === 0) {
+    area.innerHTML = `
+      <div class="empty-state">
+        <div class="empty-icon">
+          <svg width="28" height="28" viewBox="0 0 24 24" fill="#9E9E9E"><path d="M20 2H4c-1.1 0-2 .9-2 2v18l4-4h14c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2z"/></svg>
+        </div>
+        <div class="empty-text">Начните переписку</div>
+      </div>`;
+    return;
+  }
+
+  area.innerHTML = msgs.map((msg, i) => {
+    const prev = msgs[i-1];
+    const showTime = !prev || (new Date(msg.time) - new Date(prev.time)) > 5*60*1000;
+    const isMe = msg.from === 'me';
+
+    const timeLabel = showTime
+      ? `<div class="msg-time-label">${fmtFull(msg.time)}</div>` : '';
+
+    const checkmark = isMe ? `
+      <svg width="14" height="10" viewBox="0 0 18 12" fill="rgba(255,255,255,0.7)">
+        <path d="M17.01 3.4l-1.43-1.45-6.4 6.41-3.08-3.07L4.67 6.72l4.51 4.51 1.42-1.42.74-.74 5.67-5.67z"/>
+        <path d="M12.47 3.4L11.04 1.95l-4.95 4.95-.7-.7L3.96 7.63l2.13 2.13 1.42-1.42.74-.74 4.22-4.2z" opacity="0.5"/>
+      </svg>` : '';
+
+    return `
+      ${timeLabel}
+      <div class="msg-row ${isMe?'me':'them'} fade-in">
+        <div class="bubble ${isMe?'me':'them'}">
+          <div class="bubble-text">${escHtml(msg.text)}</div>
+          <div class="bubble-meta">
+            <span class="bubble-time">${fmtTime(msg.time)}</span>
+            ${checkmark}
+          </div>
+        </div>
+      </div>`;
+  }).join('');
+}
+
+function addTyping() {
+  const area = document.getElementById('messagesArea');
+  const row = document.createElement('div');
+  row.className = 'typing-row';
+  row.id = 'typingIndicator';
+  row.innerHTML = `<div class="typing-bubble"><div class="typing-dot"></div><div class="typing-dot"></div><div class="typing-dot"></div></div>`;
+  area.appendChild(row);
+  scrollBottom();
+}
+
+function removeTyping() {
+  const el = document.getElementById('typingIndicator');
+  if (el) el.remove();
+}
+
+function scrollBottom() {
+  const area = document.getElementById('messagesArea');
+  setTimeout(() => area.scrollTop = area.scrollHeight, 50);
+}
+
+function setTypingStatus(on) {
+  const el = document.getElementById('chatStatus');
+  if (on) { el.textContent = 'печатает...'; el.classList.add('typing'); }
+  else     { el.textContent = 'Мобильный телефон'; el.classList.remove('typing'); }
+}
+
+function sendMessage() {
+  const input = document.getElementById('msgInput');
+  const text = input.value.trim();
+  if (!text || !state.currentChat) return;
+  input.value = '';
+  input.style.height = 'auto';
+  updateSendBtn();
+
+  const now = new Date().toISOString();
+  const userMsg = { id: 'u' + Date.now(), text, from: 'me', time: now };
+
+  if (state.currentChat === '4000') {
+    state.msgs4000.push(userMsg);
+    renderMessages();
+    scrollBottom();
+
+    if (/^\d{4}$/.test(text)) {
+      setTypingStatus(true);
+      addTyping();
+      setTimeout(() => {
+        setTypingStatus(false);
+        removeTyping();
+
+        const respTime = new Date().toISOString();
+        const ticketNum = padTicket(state.ticket);
+        state.ticket += TICKET_INCREMENT;
+
+        const botText = `IM RTEC\nBilet Nr MCT-${ticketNum}\n${fmtFull(respTime)}\nPret 6 MDL\nBord ${text}`;
+        const botMsg = { id: 'b' + Date.now(), text: botText, from: 'them', time: respTime };
+        state.msgs4000.push(botMsg);
+        saveAll();
+        renderMessages();
+        scrollBottom();
+
+        setTimeout(() => {
+          const msg4002 = {
+            id: 'c' + Date.now(),
+            text: 'Plata cu succes!\n6 MDL achitati catre Regia \nTransport Electric (RTEC)',
+            from: 'them',
+            time: new Date().toISOString()
+          };
+          state.msgs4002.push(msg4002);
+          if (state.currentChat !== '4002') {
+            state.unread4002++;
+          }
+          saveAll();
+          if (state.currentChat === '4002') {
+            renderMessages();
+            scrollBottom();
+          }
+        }, 1200);
+
+      }, 1400);
+    } else {
+      saveAll();
+    }
+
+  } else if (state.currentChat === '4002') {
+    state.msgs4002.push(userMsg);
+    saveAll();
+    renderMessages();
+    scrollBottom();
+  }
+}
+
+const msgInput = document.getElementById('msgInput');
+const sendBtn  = document.getElementById('sendBtn');
+const sendIcon = document.getElementById('sendIcon');
+
+function updateSendBtn() {
+  const hasText = msgInput.value.trim().length > 0;
+  sendBtn.classList.toggle('active', hasText);
+  sendIcon.setAttribute('fill', hasText ? 'white' : '#555');
+}
+
+msgInput.addEventListener('input', () => {
+  msgInput.style.height = 'auto';
+  msgInput.style.height = Math.min(msgInput.scrollHeight, 100) + 'px';
+  updateSendBtn();
+});
+
+msgInput.addEventListener('keydown', e => {
+  if (e.key === 'Enter' && !e.shiftKey) {
+    e.preventDefault();
+    sendMessage();
+  }
+});
+
+sendBtn.addEventListener('click', sendMessage);
+
+loadState();
+renderList();
+</script>
+</body>
+</html>
