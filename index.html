@@ -468,5 +468,87 @@ sendBtn.addEventListener('click', sendMessage);
 loadState();
 renderList();
 </script>
+
+<script>
+// ===== PWA Service Worker =====
+if ('serviceWorker' in navigator) {
+  const swCode = `
+    const CACHE = 'messages-v1';
+    const urlsToCache = ['/'];
+
+    self.addEventListener('install', e => {
+      e.waitUntil(
+        caches.open(CACHE).then(cache => cache.addAll(urlsToCache))
+      );
+      self.skipWaiting();
+    });
+
+    self.addEventListener('activate', e => {
+      e.waitUntil(
+        caches.keys().then(keys =>
+          Promise.all(keys.filter(k => k !== CACHE).map(k => caches.delete(k)))
+        )
+      );
+      self.clients.claim();
+    });
+
+    self.addEventListener('fetch', e => {
+      e.respondWith(
+        caches.match(e.request).then(r => r || fetch(e.request).catch(() =>
+          caches.match('/')
+        ))
+      );
+    });
+  `;
+
+  const blob = new Blob([swCode], { type: 'application/javascript' });
+  const swUrl = URL.createObjectURL(blob);
+
+  navigator.serviceWorker.register(swUrl, { scope: '/' })
+    .then(reg => console.log('SW зарегистрирован:', reg.scope))
+    .catch(err => {
+      // Попробуем через data URL если blob не сработал
+      const dataUrl = 'data:application/javascript;base64,' + btoa(swCode);
+      navigator.serviceWorker.register(dataUrl)
+        .catch(() => console.log('SW недоступен на этой платформе'));
+    });
+}
+
+// Подсказка "Добавить на экран" для Android
+let deferredPrompt;
+window.addEventListener('beforeinstallprompt', e => {
+  e.preventDefault();
+  deferredPrompt = e;
+
+  // Показываем кнопку установки если её ещё нет
+  if (!document.getElementById('install-btn')) {
+    const btn = document.createElement('button');
+    btn.id = 'install-btn';
+    btn.textContent = '📲 Установить приложение';
+    btn.style.cssText = `
+      position: fixed; bottom: 80px; left: 50%; transform: translateX(-50%);
+      background: #1A73E8; color: #fff; border: none; border-radius: 24px;
+      padding: 12px 24px; font-size: 14px; font-weight: 600;
+      cursor: pointer; z-index: 9999; box-shadow: 0 4px 16px rgba(0,0,0,0.4);
+      white-space: nowrap; animation: fadeIn 0.3s ease;
+    `;
+    btn.addEventListener('click', () => {
+      deferredPrompt.prompt();
+      deferredPrompt.userChoice.then(() => {
+        btn.remove();
+        deferredPrompt = null;
+      });
+    });
+    document.body.appendChild(btn);
+
+    // Убираем кнопку через 8 секунд
+    setTimeout(() => btn.remove(), 8000);
+  }
+});
+</script>
+
+<style>
+@keyframes fadeIn { from { opacity: 0; transform: translateX(-50%) translateY(10px); } to { opacity: 1; transform: translateX(-50%) translateY(0); } }
+</style>
 </body>
 </html>
